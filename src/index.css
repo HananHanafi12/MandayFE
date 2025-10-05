@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... custom utilities & components ... */
+
+/* Custom Utilities */
+@layer utilities {
+  .transition-300 {
+    transition: all 300ms ease-in-out;
+  }
+
+  .blue-gradient {
+    background: linear-gradient(336.99deg, #0a3a89 0%, #1053d5 100%);
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .btn {
+    @apply flex items-center justify-center gap-2 py-4 px-6;
+  }
+
+  .btn-primary {
+    @apply rounded-full bg-monday-blue text-white;
+  }
+
+  .btn-black {
+    @apply rounded-2xl bg-monday-black text-white;
+  }
+
+  .btn-red {
+    @apply rounded-full bg-monday-red text-white;
+  }
+
+  .btn-primary-opacity {
+    @apply rounded-2xl bg-monday-blue/10 text-monday-blue ring-0 hover:ring-[1.5px] hover:ring-monday-blue transition-300;
+  }
+}
+
+/* Base Styles */
+@layer base {
+  body {
+    font-family: "Lexend Deca", sans-serif;
+    @apply flex flex-col flex-1 min-h-screen bg-monday-background text-monday-black;
+  }
+}
